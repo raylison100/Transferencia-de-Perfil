@@ -33,7 +33,7 @@
                <children>
                   <TextField layoutX="22.0" layoutY="34.0" prefHeight="25.0" prefWidth="243.0" promptText="IP DA MAQUINA ANTIGA" />
                   <TextField layoutX="22.0" layoutY="74.0" prefHeight="25.0" prefWidth="243.0" promptText="IP DA MAQUINA ATUAL" />
-                  <TextField layoutX="22.0" layoutY="116.0" prefHeight="25.0" prefWidth="243.0" promptText="LOGIN DE REDE" />
+                  <TextField layoutX="22.0" layoutY="116.0" prefHeight="25.0" prefWidth="243.0" promptText="LOGIN DE REDE     EX:FULANO.SICRANO" />
                   <Button layoutX="91.0" layoutY="163.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="106.0" style="-fx-background-radius: 20px; -fx-background-color: #D8D8D8;" text="TRANSFERIR" textFill="#585858" />
                </children>
             </Pane>
