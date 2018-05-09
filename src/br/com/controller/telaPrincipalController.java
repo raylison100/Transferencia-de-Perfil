@@ -59,21 +59,9 @@ public class telaPrincipalController implements Initializable {
 			Copiar cp = new Copiar(tx_origem.getText(), tx_loginRede.getText());
 
 			String log = null;
-			int contadoCopias = 0;
 			
-			
-//			File file = new File(cp.getOrigem());
-//			File afile[] = file.listFiles();
-//			int i = 0;		
-		
-//			//Mapeamento de arquivos
-//			for (int j = afile.length; i < j; i++) {
-//				File arquivos = afile[i];
-//				System.out.println(arquivos);
-//			}
-			
-			
-			// Copia de cada diretorio 
+
+			// Copia de cada diretorio
 			for (int cont = 0; cont < diretorios.length; cont++) {
 				try {
 					Process process = Runtime.getRuntime()
@@ -85,21 +73,34 @@ public class telaPrincipalController implements Initializable {
 					while (leitor.hasNextLine()) {
 						log = leitor.nextLine();
 						System.out.println(log);
-						String achaNumero[] = log.split(" ");
-						System.out.println(achaNumero[0]);
-						
+
 					}
-					
+
 					leitor.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 
 			}
-			JOptionPane.showMessageDialog(null, " FIM DA TRANFERENCIA\n" + contadoCopias+ " arquivo(s) copiado(s)"
+			JOptionPane.showMessageDialog(null, "FIM DA TRANFERENCIA\nARQUIVO(S) COPIADOS"
 					+ "\n\nENTRAR EM CONTATO COM O SERVICE DESK PARA CONFIGURAÇÃO DE EMAIL\nNUMERO: 2965");
 
 		}
-	} 
+	}
 
 }
+
+
+
+//Lendo arquivos de um diretorio
+
+// File file = new File(cp.getOrigem());
+// File afile[] = file.listFiles();
+// int i = 0;
+
+// //Mapeamento de arquivos
+// for (int j = afile.length; i < j; i++) {
+// File arquivos = afile[i];
+// System.out.println(arquivos);
+// }
+
