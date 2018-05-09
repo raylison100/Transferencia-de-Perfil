@@ -22,13 +22,13 @@ public class Copiar {
 	}
 	public void setOrigem(String origem) {		
 		
-		this.origem = "\\\\"+origem+"\\C$\\Users\\"+ID_supervisor+"\\Desktop";
+		this.origem = "\\\\"+origem+"\\C$\\Users\\"+ID_supervisor+"\\";
 	}
 	public String getDestino() {
 		return destino;
 	}
 	public void setDestino() {
-		this.destino = "C:\\Users\\"+ID_supervisor+"\\Desktop\\";
+		this.destino = "C:\\Users\\"+ID_supervisor+"\\";
 	}
 	public String getID_supervisor() {
 		return ID_supervisor;

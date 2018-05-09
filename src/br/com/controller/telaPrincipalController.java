@@ -32,6 +32,8 @@ public class telaPrincipalController implements Initializable {
 	@FXML
 	private TextField tx_loginRede;
 
+	String diretorios[] = { "Desktop", "Documents", "Downloads", "AppData\\Roaming\\Microsoft\\Sticky Notes" };
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -56,38 +58,48 @@ public class telaPrincipalController implements Initializable {
 
 			Copiar cp = new Copiar(tx_origem.getText(), tx_loginRede.getText());
 
-			File file = new File(cp.getOrigem());
-			File afile[] = file.listFiles();
 			String log = null;
-			int i = 0;
+			int contadoCopias = 0;
 			
-			// for (int j = afile.length; i < j; i++) {
-			// File arquivos = afile[i];
-			// }
+			
+//			File file = new File(cp.getOrigem());
+//			File afile[] = file.listFiles();
+//			int i = 0;		
+		
+//			//Mapeamento de arquivos
+//			for (int j = afile.length; i < j; i++) {
+//				File arquivos = afile[i];
+//				System.out.println(arquivos);
+//			}
+			
+			
+			// Copia de cada diretorio 
+			for (int cont = 0; cont < diretorios.length; cont++) {
+				try {
+					Process process = Runtime.getRuntime()
+							.exec("xcopy " + cp.getOrigem() + diretorios[cont] + " " + cp.getDestino() + " /y /s");
 
-			try {
-				Process process = Runtime.getRuntime()
-						.exec("xcopy " + cp.getOrigem() + " " + cp.getDestino() + " /y /s");
-				
-				String s = "xcopy " + cp.getOrigem() + " " + cp.getDestino() + " /y /s";
-				System.out.println(s);
-				Scanner leitor = new Scanner(process.getInputStream());
-				while (leitor.hasNextLine()) {
-					log = leitor.nextLine();
-					System.out.println(log);
+					String s = "xcopy " + cp.getOrigem() + diretorios[cont] + " " + cp.getDestino() + " /y /s";
+					System.out.println(s);
+					Scanner leitor = new Scanner(process.getInputStream());
+					while (leitor.hasNextLine()) {
+						log = leitor.nextLine();
+						System.out.println(log);
+						String achaNumero[] = log.split(" ");
+						System.out.println(achaNumero[0]);
+						
+					}
+					
+					leitor.close();
+				} catch (IOException e) {
+					e.printStackTrace();
 				}
-			} catch (IOException e) {
-				e.printStackTrace();
+
 			}
-
-			
-
-			JOptionPane.showMessageDialog(null, " FIM DA TRANFERENCIA\n" + log
+			JOptionPane.showMessageDialog(null, " FIM DA TRANFERENCIA\n" + contadoCopias+ " arquivo(s) copiado(s)"
 					+ "\n\nENTRAR EM CONTATO COM O SERVICE DESK PARA CONFIGURAÇÃO DE EMAIL\nNUMERO: 2965");
 
 		}
-	}
-
-	
+	} 
 
 }
