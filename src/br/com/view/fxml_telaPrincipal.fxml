@@ -10,31 +10,36 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="309.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.controller.telaPrincipalController">
    <children>
       <AnchorPane prefHeight="315.0" prefWidth="286.0">
          <children>
-            <Pane prefHeight="90.0" prefWidth="286.0" style="-fx-background-color: #FFFFFF;">
+            <Pane prefHeight="93.0" prefWidth="286.0" style="-fx-background-color: #FFFFFF;">
                <children>
-                  <ImageView fitHeight="90.0" fitWidth="94.0" layoutX="6.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="90.0" fitWidth="94.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../IMG/neobpo.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="88.0" layoutY="30.0" text="TRANFERENCIA DE PERFIL" textFill="#585858">
+                  <Label layoutX="86.0" layoutY="51.0" text="TRANFERENCIA DE PERFIL" textFill="#585858">
                      <font>
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-               </children>
-            </Pane>
-            <Pane layoutY="84.0" prefHeight="225.0" prefWidth="286.0" style="-fx-background-color: #0489B1;">
-               <children>
-                  <TextField layoutX="22.0" layoutY="34.0" prefHeight="25.0" prefWidth="243.0" promptText="IP DA MAQUINA ANTIGA" />
-                  <TextField layoutX="22.0" layoutY="74.0" prefHeight="25.0" prefWidth="243.0" promptText="IP DA MAQUINA ATUAL" />
-                  <TextField layoutX="22.0" layoutY="116.0" prefHeight="25.0" prefWidth="243.0" promptText="LOGIN DE REDE     EX:FULANO.SICRANO" />
-                  <Button layoutX="91.0" layoutY="163.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="106.0" style="-fx-background-radius: 20px; -fx-background-color: #D8D8D8;" text="TRANSFERIR" textFill="#585858" />
+                  <Button fx:id="bt_fechar" layoutX="248.0" layoutY="4.0" mnemonicParsing="false" onAction="#fechar" style="-fx-background-color: #F78181;" text="X" textFill="WHITE" />
+                  <Pane layoutY="101.0" prefHeight="232.0" prefWidth="286.0" style="-fx-background-color: #0489B1;">
+                     <children>
+                        <Button layoutX="91.0" layoutY="163.0" mnemonicParsing="false" onAction="#btCopiar" prefHeight="37.0" prefWidth="106.0" style="-fx-background-radius: 20px; -fx-background-color: #D8D8D8;" text="TRANSFERIR" textFill="#585858" />
+                        <TextField fx:id="tx_origem" layoutX="22.0" layoutY="34.0" prefHeight="25.0" prefWidth="243.0" promptText="IP DA MAQUINA ANTIGA" />
+                        <TextField fx:id="tx_destino" layoutX="22.0" layoutY="74.0" prefHeight="25.0" prefWidth="243.0" promptText="IP DA MAQUINA ATUAL" />
+                        <TextField fx:id="tx_loginRede" layoutX="22.0" layoutY="116.0" prefHeight="25.0" prefWidth="243.0" promptText="LOGIN DE REDE     EX:FULANO.SICRANO" />
+                        <Label layoutX="113.0" layoutY="213.0" prefHeight="11.0" prefWidth="60.0" text="by Raylison Nunes">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
          </children>
