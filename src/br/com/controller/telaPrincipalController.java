@@ -1,6 +1,6 @@
 package br.com.controller;
 
-
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,7 +9,11 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
+
 import javax.swing.JOptionPane;
+
+import com.sun.org.apache.bcel.internal.generic.CPInstruction;
 
 import br.com.model.Copiar;
 import javafx.fxml.Initializable;
@@ -26,14 +30,11 @@ public class telaPrincipalController implements Initializable {
 	private TextField tx_origem;
 
 	@FXML
-	private TextField tx_destino;
-
-	@FXML
 	private TextField tx_loginRede;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+
 	}
 
 	@FXML
@@ -42,65 +43,51 @@ public class telaPrincipalController implements Initializable {
 	}
 
 	public void btCopiar() {
+
 		if (tx_origem.getText().equals(null) || tx_origem.getText().equals("")) {
-			
+
 			JOptionPane.showMessageDialog(null, " COMPUTADOR DE ORIGEM NAO SELECIONADO");
 
-		} else if (tx_destino.getText().equals(null) || tx_destino.getText().equals("")) {
-			
-			JOptionPane.showMessageDialog(null, " COMPUTADOR DE DESTINO NAO SELECIONADO");
-
 		} else if (tx_loginRede.getText().equals(null) || tx_loginRede.getText().equals("")) {
-			
+
 			JOptionPane.showMessageDialog(null, " PERFIL DE REDE NÂO SELECIONADO");
 
 		} else {
+
+			Copiar cp = new Copiar(tx_origem.getText(), tx_loginRede.getText());
+
+			File file = new File(cp.getOrigem());
+			File afile[] = file.listFiles();
+			String log = null;
+			int i = 0;
 			
-						
-			Copiar cp = new Copiar(tx_origem.getText(), tx_destino.getText(), tx_loginRede.getText());
+			// for (int j = afile.length; i < j; i++) {
+			// File arquivos = afile[i];
+			// }
 
-			InputStream in;
-			OutputStream out;
 			try {
-				in = new FileInputStream(cp.getOrigem());
-				out = new FileOutputStream(cp.getDestino());
-				byte[] buf = new byte[1024];
-				int len;
-				while ((len = in.read(buf)) > 0) {
-					out.write(buf, 0, len);
+				Process process = Runtime.getRuntime()
+						.exec("xcopy " + cp.getOrigem() + " " + cp.getDestino() + " /y /s");
+				
+				String s = "xcopy " + cp.getOrigem() + " " + cp.getDestino() + " /y /s";
+				System.out.println(s);
+				Scanner leitor = new Scanner(process.getInputStream());
+				while (leitor.hasNextLine()) {
+					log = leitor.nextLine();
+					System.out.println(log);
 				}
-				JOptionPane.showMessageDialog(null, " FIM DA TRANFERENCIA");
-				in.close();
-				out.close();
-			} catch (FileNotFoundException e) {
-
-				e.printStackTrace();
-
 			} catch (IOException e) {
-
 				e.printStackTrace();
 			}
-		}
 
+			
+
+			JOptionPane.showMessageDialog(null, " FIM DA TRANFERENCIA\n" + log
+					+ "\n\nENTRAR EM CONTATO COM O SERVICE DESK PARA CONFIGURAÇÃO DE EMAIL\nNUMERO: 2965");
+
+		}
 	}
 
-	// int confirm = JOptionPane.showConfirmDialog(null, "CONCLUIDO\nEXITO: "
-	// + ok + " Nao encontradas: " + falhas
-	// + "\n\nDeseja ver o relatorio de erros?:", null,
-	// JOptionPane.YES_OPTION);
-	//
-	// String temp = new String();
-	// if (confirm == 0) {
-	// for (String s : falhasLog) {
-	// temp += s + "\n";
-	// }
-	// textArea.setText(temp);
-	// } else {
-	// textArea.setText("");
-	// }
-	//
-	// falhasLog.clear();
-	//
-	// JOptionPane.showMessageDialog(null, " Diretorio não selecionado");
+	
 
 }

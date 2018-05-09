@@ -8,11 +8,11 @@ public class Copiar {
 	private String ID_supervisor;
 	
 	
-	public Copiar(String origem, String destino, String Id_supervisor) {
+	public Copiar(String origem, String Id_supervisor) {
 		
 		setID_supervisor(Id_supervisor);
 		setOrigem(origem);
-		setDestino(destino);
+		setDestino();
 		
 		
 	}
@@ -20,16 +20,15 @@ public class Copiar {
 	public String getOrigem() {
 		return origem;
 	}
-	public void setOrigem(String origem) {
+	public void setOrigem(String origem) {		
 		
-		
-		this.origem = "\\C:\\Users\\"+ID_supervisor+"\\Desktop";
+		this.origem = "\\\\"+origem+"\\C$\\Users\\"+ID_supervisor+"\\Desktop";
 	}
 	public String getDestino() {
 		return destino;
 	}
-	public void setDestino(String destino) {
-		this.destino = "\\\\"+destino+"\\c$\\Users\\"+ID_supervisor+"\\Desktop";
+	public void setDestino() {
+		this.destino = "C:\\Users\\"+ID_supervisor+"\\Desktop\\";
 	}
 	public String getID_supervisor() {
 		return ID_supervisor;
