@@ -1,19 +1,12 @@
 package br.com.controller;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
-
-import com.sun.org.apache.bcel.internal.generic.CPInstruction;
 
 import br.com.model.Copiar;
 import javafx.fxml.Initializable;
@@ -65,10 +58,9 @@ public class telaPrincipalController implements Initializable {
 			for (int cont = 0; cont < diretorios.length; cont++) {
 				try {
 					Process process = Runtime.getRuntime()
-							.exec("xcopy " + cp.getOrigem() + diretorios[cont] + " " + cp.getDestino() + " /y /s");
+							.exec("xcopy " + cp.getOrigem() + diretorios[cont] + " " + cp.getDestino()+diretorios[cont]+"\\" + " /y /s");
 
-					String s = "xcopy " + cp.getOrigem() + diretorios[cont] + " " + cp.getDestino() + " /y /s";
-					System.out.println(s);
+					System.out.println("xcopy " + cp.getOrigem() + diretorios[cont] + " " + cp.getDestino() + " /y /s");				
 					Scanner leitor = new Scanner(process.getInputStream());
 					while (leitor.hasNextLine()) {
 						log = leitor.nextLine();
