@@ -1,6 +1,7 @@
 package br.com.controller;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -48,10 +49,49 @@ public class telaPrincipalController implements Initializable {
 			JOptionPane.showMessageDialog(null, " PERFIL DE REDE NÂO SELECIONADO");
 
 		} else {
+			
+			
+	
 
 			Copiar cp = new Copiar(tx_origem.getText(), tx_loginRede.getText());
-
 			String log = null;
+			
+			
+			
+             //Lendo arquivos de um diretorio
+			
+			 File file_Desktop = new File(cp.getOrigem()+diretorios[0]);
+			 File file_Documentos = new File(cp.getOrigem()+diretorios[1]);
+			 File file_Download = new File(cp.getOrigem()+diretorios[2]);
+			 File file_Notas = new File(cp.getOrigem()+diretorios[3]);
+			 
+			 File afile_desk[] = file_Desktop.listFiles();
+			 File afile_doc[] = file_Documentos.listFiles();
+			 File afile_down[] = file_Download.listFiles();
+			 File afile_notas[] = file_Notas.listFiles();
+			 
+			 int totalArquivos = afile_desk.length + afile_doc.length + afile_down.length + afile_notas.length;
+
+			 //Mapeamento de arquivos
+			 for (int j = 0 ;j < afile_desk.length; j++) {
+			  File arquivos = afile_desk[j];
+			 System.out.println(arquivos);
+			 }
+			 
+			 for (int j = 0 ;j < afile_doc.length; j++) {
+				  File arquivos = afile_doc[j];
+				 System.out.println(arquivos);
+				 }
+			 
+			 for (int j = 0 ;j < afile_down.length; j++) {
+				  File arquivos = afile_down[j];
+				 System.out.println(arquivos);
+				 }
+			 
+			 for (int j = 0 ;j < afile_notas.length; j++) {
+				  File arquivos = afile_notas[j];
+				 System.out.println(arquivos);
+				 }
 			
 
 			// Copia de cada diretorio
@@ -83,16 +123,4 @@ public class telaPrincipalController implements Initializable {
 }
 
 
-
-//Lendo arquivos de um diretorio
-
-// File file = new File(cp.getOrigem());
-// File afile[] = file.listFiles();
-// int i = 0;
-
-// //Mapeamento de arquivos
-// for (int j = afile.length; i < j; i++) {
-// File arquivos = afile[i];
-// System.out.println(arquivos);
-// }
 
