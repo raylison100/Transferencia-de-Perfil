@@ -51,8 +51,6 @@ public class telaPrincipalController implements Initializable {
 
 			} else {
 
-				Copiar cp = new Copiar(tx_origem.getText(), tx_loginRede.getText());
-
 				FXMLLoader loader = new FXMLLoader();
 				loader.setLocation(telaTransferenciaController.class.getResource("../view/fxml_transferencia.fxml"));
 				AnchorPane page;
@@ -62,7 +60,7 @@ public class telaPrincipalController implements Initializable {
 				tranferencia.setScene(scene);
 				tranferencia.setResizable(false);
 				telaTransferenciaController controller = loader.getController();
-				controller.setCp(cp);
+				controller.setCp(tx_origem.getText(), tx_loginRede.getText());
 				controller.setStage(tranferencia);
 				tranferencia.showAndWait();
 			}
