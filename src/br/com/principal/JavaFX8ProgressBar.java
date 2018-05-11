@@ -34,50 +34,50 @@ public class JavaFX8ProgressBar extends Application {
         
         //ProgressBar
         ProgressBar pbar = new ProgressBar(0);
-        pbar.indeterminateProperty().addListener(new ChangeListener<Boolean>() {
-
-           @Override
-            public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean t1) {
-                if(t1){
-                    txtState.setText("Calculating Time");
-                }
-                else{
-                    txtState.setText("In Progress");
-                            
-                }
-            }
-        });
+//        pbar.indeterminateProperty().addListener(new ChangeListener<Boolean>() {
+//
+//           @Override
+//            public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean t1) {
+//                if(t1){
+//                    txtState.setText("Calculating Time");
+//                }
+//                else{
+//                    txtState.setText("In Progress");
+//                            
+//                }
+//            }
+//        });
         
-        pbar.progressProperty().addListener(new ChangeListener<Number>() {
-
-         
-            @Override
-            public void changed(ObservableValue<? extends Number> ov, Number t, Number t1) {
-                
-                if(t1.doubleValue()==1){
-                    txtState.setText("Work Done");
-                    txtState.setFill(Color.GREEN);
-                }
-            }
-
-        });
+//        pbar.progressProperty().addListener(new ChangeListener<Number>() {
+//
+//         
+//            @Override
+//            public void changed(ObservableValue<? extends Number> ov, Number t, Number t1) {
+//                
+//                if(t1.doubleValue()==1){
+//                    txtState.setText("Work Done");
+//                    txtState.setFill(Color.GREEN);
+//                }
+//            }
+//
+//        });
         
         //PrograssIndicator
         ProgressIndicator pind = new ProgressIndicator(0);
-        pind.indeterminateProperty().addListener(new ChangeListener<Boolean>() {
-
-           @Override
-            public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean t1) {
-                    if(t1){
-                    txtState.setText("Calculating Time");
-                    txtState.setFill(Color.BLUE);
-                }
-                else{
-                    txtState.setText("In Progress");
-                            
-                }
-            }
-        });
+//        pind.indeterminateProperty().addListener(new ChangeListener<Boolean>() {
+//
+//           @Override
+//            public void changed(ObservableValue<? extends Boolean> ov, Boolean t, Boolean t1) {
+//                    if(t1){
+//                    txtState.setText("Calculating Time");
+//                    txtState.setFill(Color.BLUE);
+//                }
+//                else{
+//                    txtState.setText("In Progress");
+//                            
+//                }
+//            }
+//        });
         
         //Start Button
         Button btnStart = new Button();
@@ -121,7 +121,6 @@ public class JavaFX8ProgressBar extends Application {
     //Create a New Task
     private Task taskCreator(int seconds){
         return new Task() {
-
                    @Override
                    protected Object call() throws Exception {
                        for(int i=0; i<seconds;i++){
