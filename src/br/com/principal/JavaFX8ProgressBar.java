@@ -1,8 +1,6 @@
 package br.com.principal;
 
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -93,7 +91,8 @@ public class JavaFX8ProgressBar extends Application {
                 }
                 else{
                     //Create new Task and Thread -  Bind Progress Property to Task Progress
-                    Task task = taskCreator(Integer.parseInt(fldSec.getText()));
+                    @SuppressWarnings("rawtypes")
+					Task task = taskCreator(Integer.parseInt(fldSec.getText()));
                     pbar.progressProperty().unbind();
                     pbar.progressProperty().bind(task.progressProperty());
                     pind.progressProperty().unbind();
@@ -119,7 +118,8 @@ public class JavaFX8ProgressBar extends Application {
     }
     
     //Create a New Task
-    private Task taskCreator(int seconds){
+    @SuppressWarnings("rawtypes")
+	private Task taskCreator(int seconds){
         return new Task() {
                    @Override
                    protected Object call() throws Exception {

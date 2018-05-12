@@ -19,7 +19,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="bt_concluido" layoutX="167.0" layoutY="125.0" mnemonicParsing="false" onAction="#concluido" style="-fx-background-color: #bbbbbb;" text="Concluido" textFill="WHITE" />
+            <Button fx:id="bt_concluido" disable="true" layoutX="117.0" layoutY="125.0" mnemonicParsing="false" onAction="#concluido" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #088A08; -fx-background-radius: 20px;" text="Concluido" textFill="WHITE" />
          </children>
       </Pane>
    </children>

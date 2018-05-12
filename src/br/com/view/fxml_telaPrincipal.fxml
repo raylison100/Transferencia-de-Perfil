@@ -10,33 +10,53 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="277.0" prefWidth="286.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.controller.telaPrincipalController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="379.0" style="-fx-border-style: solid;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.controller.telaPrincipalController">
    <children>
-      <AnchorPane prefHeight="276.0" prefWidth="286.0">
+      <AnchorPane prefHeight="424.0" prefWidth="377.0">
          <children>
-            <Pane prefHeight="74.0" prefWidth="286.0" style="-fx-background-color: #FFFFFF;">
+            <Pane prefHeight="74.0" prefWidth="377.0" style="-fx-background-color: #FFFFFF; -fx-border-style: solid;">
                <children>
-                  <ImageView fitHeight="74.0" fitWidth="85.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="67.0" fitWidth="74.0" layoutX="8.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../IMG/neobpo.jpg" />
                      </image>
                   </ImageView>
-                  <Label layoutX="71.0" layoutY="32.0" text="TRANFERENCIA DE PERFIL" textFill="#585858">
+                  <Label layoutX="109.0" layoutY="30.0" text="TRANFERENCIA DE PERFIL" textFill="#585858">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Button fx:id="bt_fechar" layoutX="248.0" layoutY="4.0" mnemonicParsing="false" onAction="#fechar" style="-fx-background-color: #F78181;" text="X" textFill="WHITE" />
-                  <Pane layoutY="74.0" prefHeight="194.0" prefWidth="286.0" style="-fx-background-color: #0489B1;">
+                  <Button fx:id="bt_fechar" layoutX="341.0" layoutY="14.0" mnemonicParsing="false" onAction="#fechar" style="-fx-background-color: #F78181;" text="X" textFill="WHITE" />
+               </children>
+            </Pane>
+            <Pane layoutY="75.0" prefHeight="349.0" prefWidth="377.0" style="-fx-background-color: #0B0B61;">
+               <children>
+                  <Button layoutX="136.0" layoutY="273.0" mnemonicParsing="false" onAction="#btCopiar" prefHeight="37.0" prefWidth="106.0" style="-fx-background-radius: 20px; -fx-background-color: #D8D8D8;" text="TRANSFERIR" textFill="#575757" />
+                  <TextField fx:id="tx_origem" layoutX="22.0" layoutY="34.0" prefHeight="25.0" prefWidth="337.0" promptText="IP DA MAQUINA ANTIGA" />
+                  <TextField fx:id="tx_loginRede" layoutX="22.0" layoutY="74.0" prefHeight="25.0" prefWidth="337.0" promptText="LOGIN DE REDE     EX:FULANO.SICRANO" />
+                  <Label layoutX="152.0" layoutY="322.0" prefHeight="12.0" prefWidth="74.0" text="by Raylison Nunes" textFill="#f8f8f8">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <Pane layoutX="22.0" layoutY="109.0" prefHeight="149.0" prefWidth="337.0" style="-fx-background-color: #BDBDBD; -fx-background-radius: 10PX;">
                      <children>
-                        <Button layoutX="91.0" layoutY="116.0" mnemonicParsing="false" onAction="#btCopiar" prefHeight="37.0" prefWidth="106.0" style="-fx-background-radius: 20px; -fx-background-color: #D8D8D8;" text="TRANSFERIR" textFill="#585858" />
-                        <TextField fx:id="tx_origem" layoutX="22.0" layoutY="34.0" prefHeight="25.0" prefWidth="243.0" promptText="IP DA MAQUINA ANTIGA" />
-                        <TextField fx:id="tx_loginRede" layoutX="22.0" layoutY="74.0" prefHeight="25.0" prefWidth="243.0" promptText="LOGIN DE REDE     EX:FULANO.SICRANO" />
-                        <Label layoutX="113.0" layoutY="175.0" prefHeight="11.0" prefWidth="60.0" text="by Raylison Nunes">
+                        <Label layoutX="128.0" layoutY="14.0" text="Instruções" textFill="WHITE">
                            <font>
-                              <Font size="7.0" />
+                              <Font name="Book Antiqua Bold" size="17.0" />
                            </font>
                         </Label>
+                        <Label layoutX="14.0" layoutY="50.0" prefHeight="17.0" prefWidth="319.0" text="1 - Maquina a transferir perfil deve estar ligada." textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="75.0" prefHeight="17.0" prefWidth="319.0" text="2 - Faça logoff na maquina antiga" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="101.0" prefHeight="17.0" prefWidth="319.0" text="3 - Aguarde o fim da transferencia para utilizar a maquina" textFill="WHITE" />
                      </children>
                   </Pane>
                </children>
