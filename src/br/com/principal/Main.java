@@ -16,7 +16,7 @@ Stage window;
              
         window = stage;
         window.initStyle(StageStyle.UNDECORATED);
-        Parent root = FXMLLoader.load(getClass().getResource("..\\view\\fxml_telaPrincipal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/br/com/view/fxml_telaPrincipal.fxml"));
         Scene scene = new Scene(root );
         window.setScene(scene);
         window.show();

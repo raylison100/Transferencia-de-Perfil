@@ -50,7 +50,7 @@ public class telaPrincipalController implements Initializable {
 			} else {
 
 				FXMLLoader loader = new FXMLLoader();
-				loader.setLocation(telaTransferenciaController.class.getResource("../view/fxml_transferencia.fxml"));
+				loader.setLocation(telaTransferenciaController.class.getResource("/br/com/view/fxml_transferencia.fxml"));
 				AnchorPane page;
 				page = (AnchorPane) loader.load();
 				Stage tranferencia = new Stage();
