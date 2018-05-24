@@ -3,8 +3,9 @@ package br.com.controller;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javax.swing.JOptionPane;
+
+
 import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,10 +39,32 @@ public class telaPrincipalController implements Initializable {
 	public void btCopiar() {
 
 		try {
+			
+//			String log;
+//			Process process = null;
+//			try {
+//				process = Runtime.getRuntime().exec("ping " + tx_origem.getText());
+//				System.out.println("ping " + tx_origem.getText());
+//				Scanner leitor = new Scanner(process.getInputStream());
+//				while (leitor.hasNextLine()) {
+//					log = leitor.nextLine();
+//					System.out.println(log);
+//
+//				}
+//				leitor.close();
+//				
+//			} catch (IOException e) {
+//				
+//				e.printStackTrace();
+//			}
+			
+			
+			
 
 			if (tx_origem.getText().equals(null) || tx_origem.getText().equals("")) {
 
 				JOptionPane.showMessageDialog(null, " COMPUTADOR DE ORIGEM NAO SELECIONADO");
+				
 
 			} else if (tx_loginRede.getText().equals(null) || tx_loginRede.getText().equals("")) {
 

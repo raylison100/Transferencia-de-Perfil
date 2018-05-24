@@ -39,7 +39,7 @@
                         <Font size="9.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="22.0" layoutY="109.0" prefHeight="149.0" prefWidth="337.0" style="-fx-background-color: #BDBDBD; -fx-background-radius: 10PX;">
+                  <Pane layoutX="22.0" layoutY="109.0" prefHeight="149.0" prefWidth="337.0" style="-fx-background-color: #6E6E6E; -fx-background-radius: 10PX;">
                      <children>
                         <Label layoutX="128.0" layoutY="14.0" text="Instruções" textFill="WHITE">
                            <font>
@@ -48,15 +48,19 @@
                         </Label>
                         <Label layoutX="14.0" layoutY="50.0" prefHeight="17.0" prefWidth="319.0" text="1 - Maquina a transferir perfil deve estar ligada." textFill="WHITE">
                            <font>
-                              <Font size="13.0" />
+                              <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="75.0" prefHeight="17.0" prefWidth="319.0" text="2 - Faça logoff na maquina antiga" textFill="WHITE">
+                        <Label layoutX="14.0" layoutY="71.0" prefHeight="17.0" prefWidth="319.0" text="2 - Faça logoff na maquina antiga." textFill="WHITE">
                            <font>
-                              <Font size="13.0" />
+                              <Font name="System Bold" size="13.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="101.0" prefHeight="17.0" prefWidth="319.0" text="3 - Aguarde o fim da transferencia para utilizar a maquina" textFill="WHITE" />
+                        <Label layoutX="14.0" layoutY="92.0" prefHeight="17.0" prefWidth="319.0" text="3 - Aguarde o fim da transferencia." textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                </children>

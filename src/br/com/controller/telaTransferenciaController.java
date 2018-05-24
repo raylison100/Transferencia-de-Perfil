@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-
 import javax.swing.JOptionPane;
 
 import br.com.model.Copiar;
@@ -102,9 +101,12 @@ public class telaTransferenciaController implements Initializable {
 		File afile_down[] = file_Download.listFiles();
 		File afile_notas[] = file_Notas.listFiles();
 		File afile_google[] = file_Google.listFiles();
+		
+		
 
-		totalArquivos = afile_desk.length + afile_doc.length + afile_down.length + afile_notas.length + afile_google.length;
+		totalArquivos = afile_desk.length + afile_doc.length + afile_down.length + afile_notas.length *+ afile_google.length;
 
+		
 		// Mapeamento de arquivos
 		for (int j = 0; j < afile_desk.length; j++) {
 			File arquivos = afile_desk[j];
@@ -128,7 +130,7 @@ public class telaTransferenciaController implements Initializable {
 			File arquivos = afile_down[j];
 			endereco.add("\\"+arquivos.getName());
 			temp++;
-//			System.out.println(arquivos);
+//		System.out.println(arquivos);
 		}
 
 		download = temp;
@@ -174,9 +176,12 @@ public class telaTransferenciaController implements Initializable {
 					if (i < desktop) {
 
 						try {
+							
+												
+							
 							@SuppressWarnings("unused")
-							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[0] +endereco.get(i) +"\""  + " "
-									+ cp.getDestino() + diretorios[0] + "\\" + " /y /s");
+							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[0] +"\\*"+"\"" + " "
+									+ cp.getDestino() + diretorios[0] + "\\" + "/E /Y ");
 
 //							System.out.println("xcopy " +"\""  + cp.getOrigem()+ diretorios[0] + endereco.get(i) +"\""  + " " + cp.getDestino() + diretorios[0] + " /y /s");
 //							Scanner leitor = new Scanner(process.getInputStream());
@@ -194,10 +199,10 @@ public class telaTransferenciaController implements Initializable {
 						
 						try {
 							@SuppressWarnings("unused")
-							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[1] + endereco.get(i) +"\"" + " "
-									+ cp.getDestino() + diretorios[1] + "\\" + " /y /s");
+							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[1] +"\\*"+"\"" + " "
+									+"\""+ cp.getDestino() + diretorios[1] + "\\"+"\"" + "/E /Y ");
 
-//							System.out.println("xcopy " +"\"" + cp.getOrigem()+ diretorios[1] + endereco.get(i) +"\"" + " " + cp.getDestino() + diretorios[1] + " /y /s");
+//							System.out.println("xcopy " +"\"" + cp.getOrigem()+ diretorios[1] +"\\*"+"\"" + " " + cp.getDestino() + diretorios[1] + " /E /Y ");
 //							Scanner leitor = new Scanner(process.getInputStream());
 //							while (leitor.hasNextLine()) {
 //								log = leitor.nextLine();
@@ -213,8 +218,8 @@ public class telaTransferenciaController implements Initializable {
 						
 						try {
 							@SuppressWarnings("unused")
-							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[2] + endereco.get(i) +"\"" + " "
-									+ cp.getDestino() + diretorios[2] + "\\" + " /y /s");
+							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[2] +"\\*"+"\"" + " "
+									+"\""+ cp.getDestino() + diretorios[2] + "\\"+"\"" + "/E /Y ");
 
 //							System.out.println("xcopy " +"\"" + cp.getOrigem()+ diretorios[2] + endereco.get(i) +"\"" + " " + cp.getDestino() + diretorios[2] + " /y /s");
 //							Scanner leitor = new Scanner(process.getInputStream());
@@ -232,10 +237,11 @@ public class telaTransferenciaController implements Initializable {
 						
 						try {
 							@SuppressWarnings("unused")
-							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[3] + endereco.get(i) +"\"" + " "
-									+ cp.getDestino() + diretorios[3] + "\\" + " /y /s");
+							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[3] +"\\*"+"\"" + " "
+									+"\""+ cp.getDestino() + diretorios[3]+"\\\""  + "/S /E /Y ");
 
-//							System.out.println("xcopy " +"\"" + cp.getOrigem()+ diretorios[3] + endereco.get(i) +"\"" + " " + cp.getDestino() + diretorios[3] + " /y /s");
+//							System.out.println("xcopy " +"\"" + cp.getOrigem()+ diretorios[3] +"\\*"+"\"" + " "
+//									+"\""+ cp.getDestino() + diretorios[3]+"\\\""  + "/S /E /Y ");
 //							Scanner leitor = new Scanner(process.getInputStream());
 //							while (leitor.hasNextLine()) {
 //								log = leitor.nextLine();
@@ -251,8 +257,8 @@ public class telaTransferenciaController implements Initializable {
 						
 						try {
 							@SuppressWarnings("unused")
-							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[4] + endereco.get(i) +"\"" + " "
-									+ cp.getDestino() + diretorios[4] + "\\" + " /y /s");
+							Process process = Runtime.getRuntime().exec("xcopy " +"\"" + cp.getOrigem()+ diretorios[4] +"\\*"+"\"" + " "
+									+"\""+ cp.getDestino() + diretorios[4] + "\\"+"\"" + "/E /Y ");
 
 //							System.out.println("xcopy " +"\"" + cp.getOrigem()+ diretorios[4] + endereco.get(i) +"\"" + " " + cp.getDestino() + diretorios[4] + " /y /s");
 //							Scanner leitor = new Scanner(process.getInputStream());
